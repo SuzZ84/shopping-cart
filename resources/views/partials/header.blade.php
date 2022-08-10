@@ -8,17 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
+          <li>
+            <div class="col-lg">
+            <a href="{{route('product.index') }}"><i class="fa-solid fa-house-user" aria-hidden="true"></i> Homepage</li>
             <li>
-              
-              <div class="col-lg-9">
-              <a href="{{route('product.shoppingCart') }}"><i  class="fa-solid fa-cart-arrow-down" aria-hidden="true"></i> Shopping Cart
+              <div class="col-lg">                                  
+              <a href="{{route('product.shoppingCart') }}"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> Shopping Cart
               <span class="badge badge-success">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></a>
               </li>
               
-              <li class="dropdown"> 
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa-solid fa-user-large"></i> User Management</a>
-                    
+              <div class="col-lg">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-user-large"></i> User Management</a>
                   <ul class="dropdown-menu">
                   @if (Auth::check())
                     <li><a class="dropdown-item" href="{{ route('user.profile') }}">User Profile</a></li>
@@ -26,9 +26,11 @@
                     <li><a class="dropdown-item" href="{{ route('user.logout')}}">Logout</a></li>      
                   @else
                     <li><a class="dropdown-item" href="{{ route('user.signup') }}">Signup</a></li>
-              <li><a class="dropdown-item" href="{{ route('user.signin') }}">Signin</a></li>
-
+                    <li><a class="dropdown-item" href="{{ route('user.signin') }}">Signin</a></li>
             @endif
+                  </ul>
+              </li>
+            </div>
           </ul>
           </ul>
         </li>         

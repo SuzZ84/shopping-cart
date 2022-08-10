@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('imagePath');
             $table->string('title');
             $table->text('description');
-            $table->float('price');
+            $table->double('price');
             $table->rememberToken();
 
         });

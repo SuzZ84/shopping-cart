@@ -6,9 +6,9 @@ Laravel Shopping-Cart
     @foreach ($products->chunk(3) as $productChunk)
         <div class="row">
         @foreach ($productChunk as $product)
-            <div class="col-sm-6 col-md-4">
+            <div class="col-md-3 col-md-4">
                 <div class="thumbnail">
-                    <img src={{ $product->imagePath }} class="card-img-top" alt="..."  class="img-responsive">
+                    <img src={{ $product->imagePath }} alt="...">
                         <div class="caption">
                             <h5> {{ $product->title }} </h5>
                                 <p class="description">{{ $product->description }}</p>

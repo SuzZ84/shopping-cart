@@ -11,16 +11,17 @@ Laravel Shopping-Cart
    }
 
     </style>
+    
     @if (Session::has('cart'))
         <div class="row">
             <div class="col-md-6">
                 <ul class="list-group">
                     @foreach ($products as $product)
                         <li class="list-group-item">     
-                            <span class="badge badge-pill badge-primary"> {{ $product['qty'] }}</span>
+                            <span class="badge badge-pill badge-primary"> {{ $product['qty'] }} kpl </span>
                             <span> {{ $product['item']['title']}} </span>
                             <br>
-                            <strong class="label label-success"> {{ $product['price'] }} </strong>
+                            <strong class="label label-success"> {{ $product['price'] }} €</strong>
                             <br>
                             <div class="btn-group">
                                 <button type="dropdown" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,7 +47,7 @@ Laravel Shopping-Cart
         <hr>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <button type="button" class="btn btn-success">CheckOut </button>
+                <a href="{{route('checkout') }}" type="button" class="btn btn-success">CheckOut </a>
             </div>
         </div>
     @else
